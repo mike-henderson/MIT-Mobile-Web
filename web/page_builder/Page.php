@@ -138,7 +138,10 @@ class Page {
         $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
 		$type = 'iphone';
-	} 
+	}
+	else if(eregi('ipad',$user_agent)){
+    	$type = "computer";
+    } 
 	else if (eregi('android',$user_agent) || eregi('opera mini',$user_agent) || eregi('blackberry',$user_agent) || preg_match('/(webOS|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
     }
